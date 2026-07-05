@@ -42,7 +42,7 @@ export default function Hero() {
             initial="hidden"
             animate="show"
             custom={1}
-            className="font-display text-5xl font-medium leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl"
+            className="font-gilroy text-5xl font-medium leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl"
           >
             Own real estate.
             <br />
@@ -68,23 +68,34 @@ export default function Hero() {
             custom={3}
             className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
-            <a
+            <motion.a
               href="#market"
-              className="group flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-background transition-transform hover:scale-[1.03] active:scale-95"
+              initial="rest"
+              whileHover="hover"
+              whileTap={{ scale: 0.95 }}
+              animate="rest"
+              className="flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-background"
+              variants={{ rest: { scale: 1 }, hover: { scale: 1.03 } }}
+              transition={{ duration: 0.2 }}
             >
               Explore Properties
-              <ArrowRight
-                size={16}
-                strokeWidth={2.5}
-                className="transition-transform group-hover:translate-x-1"
-              />
-            </a>
-            <a
+              <motion.span
+                className="flex"
+                variants={{ rest: { x: 0 }, hover: { x: 4 } }}
+                transition={{ duration: 0.2 }}
+              >
+                <ArrowRight size={16} strokeWidth={2.5} />
+              </motion.span>
+            </motion.a>
+            <motion.a
               href="#wallet"
-              className="rounded-full border border-border px-7 py-3.5 text-sm font-semibold text-foreground transition-colors hover:bg-surface"
+              whileHover={{ backgroundColor: "#0e0e10" }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.2 }}
+              className="rounded-full border border-border px-7 py-3.5 text-sm font-semibold text-foreground"
             >
               Connect Wallet
-            </a>
+            </motion.a>
           </motion.div>
 
           <motion.div
@@ -115,7 +126,7 @@ export default function Hero() {
         >
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="font-display text-3xl font-medium text-foreground sm:text-4xl">
+              <div className="font-gilroy text-3xl font-medium text-foreground sm:text-4xl">
                 <CountUp
                   value={stat.value}
                   prefix={stat.prefix}

@@ -39,7 +39,7 @@ export default function Wallet() {
           <span className="text-xs font-semibold uppercase tracking-widest text-gold">
             Wallet
           </span>
-          <h2 className="mt-3 font-display text-4xl font-medium tracking-tight sm:text-5xl">
+          <h2 className="mt-3 font-gilroy text-4xl font-medium tracking-tight sm:text-5xl">
             Your crypto,
             <br className="hidden sm:block" /> ready to deploy.
           </h2>
@@ -65,7 +65,7 @@ export default function Wallet() {
             </div>
 
             <div className="mt-8 text-xs text-muted">Total Balance</div>
-            <div className="mt-1 font-display text-3xl font-medium text-foreground">
+            <div className="mt-1 font-gilroy text-3xl font-medium text-foreground">
               $
               {balances
                 .reduce((s, b) => s + b.usd, 0)
@@ -73,14 +73,24 @@ export default function Wallet() {
             </div>
 
             <div className="mt-8 grid grid-cols-2 gap-3">
-              <button className="flex items-center justify-center gap-2 rounded-full bg-gold py-2.5 text-xs font-semibold text-background transition-transform hover:scale-[1.02] active:scale-95">
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.2 }}
+                className="flex items-center justify-center gap-2 rounded-full bg-gold py-2.5 text-xs font-semibold text-background"
+              >
                 <ArrowDownToLine size={14} />
                 Deposit
-              </button>
-              <button className="flex items-center justify-center gap-2 rounded-full border border-border py-2.5 text-xs font-semibold text-foreground transition-colors hover:bg-surface-2">
+              </motion.button>
+              <motion.button
+                whileHover={{ backgroundColor: "#17171a" }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ duration: 0.2 }}
+                className="flex items-center justify-center gap-2 rounded-full border border-border py-2.5 text-xs font-semibold text-foreground"
+              >
                 <ArrowUpFromLine size={14} />
                 Withdraw
-              </button>
+              </motion.button>
             </div>
 
             <div className="mt-8 space-y-4 border-t border-border pt-6">

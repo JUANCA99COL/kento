@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { MessageCircle, Briefcase, Send } from "lucide-react";
 import Container from "./ui/Container";
 
@@ -22,7 +25,7 @@ export default function Footer() {
       <Container>
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-5">
           <div className="col-span-2">
-            <span className="font-display text-2xl font-semibold tracking-tight text-foreground">
+            <span className="font-gilroy text-2xl font-semibold tracking-tight text-foreground">
               KENTO
             </span>
             <p className="mt-3 max-w-xs text-sm text-muted">
@@ -31,13 +34,20 @@ export default function Footer() {
             </p>
             <div className="mt-5 flex gap-3">
               {[MessageCircle, Briefcase, Send].map((Icon, i) => (
-                <a
+                <motion.a
                   key={i}
                   href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-gold hover:text-gold"
+                  whileHover={{
+                    scale: 1.1,
+                    borderColor: "#cba135",
+                    color: "#cba135",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted"
                 >
                   <Icon size={15} />
-                </a>
+                </motion.a>
               ))}
             </div>
           </div>

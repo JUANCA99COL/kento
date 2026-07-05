@@ -45,7 +45,7 @@ export default function Contact() {
             <span className="text-xs font-semibold uppercase tracking-widest text-gold">
               Contact Us
             </span>
-            <h2 className="mt-3 font-display text-4xl font-medium tracking-tight sm:text-5xl">
+            <h2 className="mt-3 font-gilroy text-4xl font-medium tracking-tight sm:text-5xl">
               Let&apos;s talk
               <br /> about your portfolio.
             </h2>
@@ -89,19 +89,20 @@ export default function Contact() {
                   className="flex h-full min-h-[360px] flex-col items-center justify-center text-center"
                 >
                   <CheckCircle2 size={40} className="text-emerald" />
-                  <h3 className="mt-4 font-display text-xl font-medium text-foreground">
+                  <h3 className="mt-4 font-gilroy text-xl font-medium text-foreground">
                     Message sent
                   </h3>
                   <p className="mt-2 max-w-xs text-sm text-muted">
                     Thanks for reaching out — someone from our investor
                     relations team will follow up shortly.
                   </p>
-                  <button
+                  <motion.button
                     onClick={() => setSubmitted(false)}
-                    className="mt-6 text-sm font-medium text-gold hover:underline"
+                    whileHover={{ textDecoration: "underline" }}
+                    className="mt-6 text-sm font-medium text-gold"
                   >
                     Send another message
-                  </button>
+                  </motion.button>
                 </motion.div>
               ) : (
                 <motion.form
@@ -148,16 +149,25 @@ export default function Contact() {
                       className="resize-none rounded-xl border border-border bg-surface-2 px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted/50 focus:border-gold"
                     />
                   </label>
-                  <button
+                  <motion.button
                     type="submit"
-                    className="group flex items-center justify-center gap-2 rounded-full bg-gold py-3.5 text-sm font-semibold text-background transition-transform hover:scale-[1.01] active:scale-95 sm:col-span-2"
+                    initial="rest"
+                    whileHover="hover"
+                    whileTap={{ scale: 0.97 }}
+                    animate="rest"
+                    variants={{ rest: { scale: 1 }, hover: { scale: 1.01 } }}
+                    transition={{ duration: 0.2 }}
+                    className="flex items-center justify-center gap-2 rounded-full bg-gold py-3.5 text-sm font-semibold text-background sm:col-span-2"
                   >
                     Send Message
-                    <Send
-                      size={15}
-                      className="transition-transform group-hover:translate-x-1"
-                    />
-                  </button>
+                    <motion.span
+                      className="flex"
+                      variants={{ rest: { x: 0 }, hover: { x: 4 } }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Send size={15} />
+                    </motion.span>
+                  </motion.button>
                 </motion.form>
               )}
             </AnimatePresence>

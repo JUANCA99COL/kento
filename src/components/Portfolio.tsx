@@ -32,7 +32,7 @@ export default function Portfolio() {
           <span className="text-xs font-semibold uppercase tracking-widest text-gold">
             Your Portfolio
           </span>
-          <h2 className="mt-3 font-display text-4xl font-medium tracking-tight sm:text-5xl">
+          <h2 className="mt-3 font-gilroy text-4xl font-medium tracking-tight sm:text-5xl">
             Passive income,
             <br className="hidden sm:block" /> tracked in real time.
           </h2>
@@ -49,7 +49,7 @@ export default function Portfolio() {
             <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-start">
               <div>
                 <div className="text-xs text-muted">Total Portfolio Value</div>
-                <div className="mt-2 font-display text-4xl font-medium text-foreground sm:text-5xl">
+                <div className="mt-2 font-gilroy text-4xl font-medium text-foreground sm:text-5xl">
                   <CountUp value={totalValue} prefix="$" />
                 </div>
                 <div
@@ -68,13 +68,13 @@ export default function Portfolio() {
               <div className="flex gap-8 text-right">
                 <div>
                   <div className="text-xs text-muted">Monthly Income</div>
-                  <div className="mt-1 font-display text-xl font-medium text-emerald">
+                  <div className="mt-1 font-gilroy text-xl font-medium text-emerald">
                     +${totalIncome}
                   </div>
                 </div>
                 <div>
                   <div className="text-xs text-muted">Properties</div>
-                  <div className="mt-1 font-display text-xl font-medium text-foreground">
+                  <div className="mt-1 font-gilroy text-xl font-medium text-foreground">
                     {holdings.length}
                   </div>
                 </div>

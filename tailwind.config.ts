@@ -25,7 +25,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ["var(--font-space-grotesk)", "sans-serif"],
+        gilroy: ["Gilroy", "sans-serif"],
         sans: ["var(--font-inter)", "sans-serif"],
       },
       backgroundImage: {

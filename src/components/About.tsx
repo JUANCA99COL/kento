@@ -41,7 +41,7 @@ export default function About() {
             <span className="text-xs font-semibold uppercase tracking-widest text-gold">
               About Kento
             </span>
-            <h2 className="mt-3 font-display text-4xl font-medium leading-tight tracking-tight sm:text-5xl">
+            <h2 className="mt-3 font-gilroy text-4xl font-medium leading-tight tracking-tight sm:text-5xl">
               Real estate wealth,
               <br /> without the gatekeepers.
             </h2>
@@ -61,19 +61,19 @@ export default function About() {
 
             <div className="mt-10 flex gap-10">
               <div>
-                <div className="font-display text-3xl font-medium text-foreground">
+                <div className="font-gilroy text-3xl font-medium text-foreground">
                   2022
                 </div>
                 <div className="mt-1 text-xs text-muted">Founded</div>
               </div>
               <div>
-                <div className="font-display text-3xl font-medium text-foreground">
+                <div className="font-gilroy text-3xl font-medium text-foreground">
                   14
                 </div>
                 <div className="mt-1 text-xs text-muted">Team members</div>
               </div>
               <div>
-                <div className="font-display text-3xl font-medium text-foreground">
+                <div className="font-gilroy text-3xl font-medium text-foreground">
                   9
                 </div>
                 <div className="mt-1 text-xs text-muted">Markets covered</div>
@@ -89,12 +89,16 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-gold/40"
+                whileHover={{
+                  borderColor: "rgba(203,161,53,0.4)",
+                  y: -4,
+                }}
+                className="rounded-2xl border border-border bg-surface p-6"
               >
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/10 text-gold">
                   <v.icon size={18} />
                 </span>
-                <h3 className="mt-4 font-display text-base font-medium text-foreground">
+                <h3 className="mt-4 font-gilroy text-base font-medium text-foreground">
                   {v.title}
                 </h3>
                 <p className="mt-2 text-sm text-muted">{v.body}</p>

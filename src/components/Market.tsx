@@ -29,7 +29,7 @@ export default function Market() {
             <span className="text-xs font-semibold uppercase tracking-widest text-gold">
               The Market
             </span>
-            <h2 className="mt-3 font-display text-4xl font-medium tracking-tight sm:text-5xl">
+            <h2 className="mt-3 font-gilroy text-4xl font-medium tracking-tight sm:text-5xl">
               Curated properties.
               <br className="hidden sm:block" /> Fractional entry.
             </h2>
@@ -49,8 +49,10 @@ export default function Market() {
               whileInView="show"
               viewport={{ once: true, margin: "-60px" }}
               custom={i}
-              whileHover={{ y: -6 }}
-              className="group overflow-hidden rounded-2xl border border-border bg-surface transition-colors hover:border-gold/40"
+              whileHover={{ y: -6, borderColor: "rgba(203,161,53,0.4)" }}
+              transition={{ duration: 0.3 }}
+              className="group overflow-hidden rounded-2xl border border-border bg-surface"
+              style={{ borderColor: "rgba(255,255,255,0.08)" }}
             >
               <div
                 className="relative h-48 w-full bg-cover bg-center"
@@ -66,7 +68,7 @@ export default function Market() {
               <div className="p-6">
                 <div className="flex items-start justify-between">
                   <div>
-                    <h3 className="font-display text-lg font-medium text-foreground">
+                    <h3 className="font-gilroy text-lg font-medium text-foreground">
                       {property.name}
                     </h3>
                     <p className="mt-1 flex items-center gap-1 text-xs text-muted">
@@ -99,21 +101,30 @@ export default function Market() {
                 <div className="mt-5 flex items-center justify-between border-t border-border pt-5">
                   <div>
                     <div className="text-xs text-muted">Token price</div>
-                    <div className="font-display text-base font-medium text-foreground">
+                    <div className="font-gilroy text-base font-medium text-foreground">
                       ${property.tokenPrice}
                     </div>
                   </div>
                   <div className="text-right">
                     <div className="text-xs text-muted">Min. investment</div>
-                    <div className="font-display text-base font-medium text-foreground">
+                    <div className="font-gilroy text-base font-medium text-foreground">
                       ${property.minInvestment.toLocaleString()}
                     </div>
                   </div>
                 </div>
 
-                <button className="mt-5 w-full rounded-full border border-border py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-gold hover:bg-gold hover:text-background">
+                <motion.button
+                  whileHover={{
+                    backgroundColor: "#cba135",
+                    borderColor: "#cba135",
+                    color: "#050505",
+                  }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ duration: 0.2 }}
+                  className="mt-5 w-full rounded-full border border-border py-2.5 text-sm font-semibold text-foreground"
+                >
                   Invest Now
-                </button>
+                </motion.button>
               </div>
             </motion.div>
           ))}
